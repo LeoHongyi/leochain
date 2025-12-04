@@ -1,0 +1,13 @@
+syntax = "proto3";
+package leochain.token.v1;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "leochain/x/token/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "leochain/x/token/Params";
+  option (gogoproto.equal) = true;
+}

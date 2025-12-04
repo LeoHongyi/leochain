@@ -1,0 +1,55 @@
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+go.work
+
+# Build
+build/
+dist/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cosmos SDK / Ignite
+.ignite/
+release/
+
+# Node modules (React frontend)
+explorer/node_modules/
+explorer/dist/
+explorer/.env
+explorer/.env.local
+explorer/.env.*.local
+
+# Blockchain data
+data/
+*.db
+
+# Secrets
+*.pem
+*.key
+.env
+.env.local
+
+# Test
+coverage.out
+coverage.html
+
+# Temporary
+tmp/
+temp/

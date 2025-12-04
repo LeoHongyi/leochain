@@ -1,0 +1,31 @@
+version: 1
+validation: sovereign
+default_denom: stake
+accounts:
+- name: alice
+  coins:
+  - 1000000leotoken
+  - 200000000stake
+- name: bob
+  coins:
+  - 500000leotoken
+  - 100000000stake
+- name: carol
+  coins:
+  - 250000leotoken
+  - 50000000stake
+client:
+  openapi:
+    path: docs/static/openapi.json
+faucet:
+  name: bob
+  coins:
+  - 100leotoken
+  - 100000stake
+validators:
+- name: alice
+  bonded: 100000000stake
+- name: validator1
+  bonded: 200000000stake
+- name: validator2
+  bonded: 100000000stake

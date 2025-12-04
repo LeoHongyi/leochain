@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package leochain.token.v1;
+
+import "amino/amino.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "leochain/token/v1/params.proto";
+
+option go_package = "leochain/x/token/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/leochain/token/v1/params";
+  }
+
+  // Balance Queries a list of Balance items.
+  rpc Balance(QueryBalanceRequest) returns (QueryBalanceResponse) {
+    option (google.api.http).get = "/leochain/token/v1/balance/{address}/{denom}";
+  }
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params holds all the parameters of this module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
+
+// QueryBalanceRequest defines the QueryBalanceRequest message.
+message QueryBalanceRequest {
+  string address = 1;
+  string denom = 2;
+}
+
+// QueryBalanceResponse defines the QueryBalanceResponse message.
+message QueryBalanceResponse {
+  string balance = 1;
+}

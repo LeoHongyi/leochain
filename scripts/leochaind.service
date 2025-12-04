@@ -1,0 +1,15 @@
+[Unit]
+Description=LeoChain Blockchain Node
+After=network-online.target
+
+[Service]
+User=root
+ExecStart=/root/go/bin/leochaind start --home /root/.leochain
+Restart=on-failure
+RestartSec=10
+LimitNOFILE=65535
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
