@@ -17,7 +17,8 @@ ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=$(APPNAME) \
 	-X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 	-X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT)
 
-BUILD_FLAGS := -ldflags '$(ldflags)'
+# Add sonic_avx2_disabled tag to fix sonic/loader compatibility on some systems
+BUILD_FLAGS := -ldflags '$(ldflags)' -tags=sonic_avx2_disabled
 
 ##############
 ###  Test  ###
