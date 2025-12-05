@@ -17,8 +17,8 @@ ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=$(APPNAME) \
 	-X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 	-X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT)
 
-# Add sonic_avx2_disabled tag to fix sonic/loader compatibility on some systems
-BUILD_FLAGS := -ldflags '$(ldflags)' -tags=sonic_avx2_disabled
+# Add stdjson tag to use standard library JSON instead of sonic (fixes Go 1.24 compatibility)
+BUILD_FLAGS := -ldflags '$(ldflags)' -tags=stdjson
 
 ##############
 ###  Test  ###
