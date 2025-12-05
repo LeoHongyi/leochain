@@ -3,9 +3,9 @@ module leochain
 go 1.24.0
 
 replace (
-	// fix sonic loader compatibility with newer Go versions
-	github.com/bytedance/sonic => github.com/bytedance/sonic v1.13.2
-	github.com/bytedance/sonic/loader => github.com/bytedance/sonic/loader v0.2.4
+	// fix sonic loader compatibility with Go 1.24+
+	github.com/bytedance/sonic => github.com/bytedance/sonic v1.14.0
+	github.com/bytedance/sonic/loader => github.com/bytedance/sonic/loader v0.3.0
 	// force consistent cosmos-sdk version across all dependencies
 	github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.53.4
 	// fix upstream GHSA-h395-qcrw-5vmq vulnerability.
